@@ -3,6 +3,10 @@ package main;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**Input value of array size
+ * @author mikhail.rybalko
+ *
+ */
 public class Input {
 	
 	public static int input() throws Exception {

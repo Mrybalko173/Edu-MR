@@ -1,8 +1,12 @@
 package main;
 
+/**class of sorting algorithms 
+ * @author mikhail.rybalko
+ *
+ */
 public class Sort {
 	
-	public int[] bubbleSort(int arr[]){
+	public int[] bubbleSort(int arr[]){  // bubble sort algorithm
 		
 		for (int i = 1; i<arr.length; i++){
 			for (int j = i-1; j>=0; j--){
@@ -16,7 +20,7 @@ public class Sort {
 		return arr;
 	}
 	
-	public int[] insertionSort(int arr[]){
+	public int[] insertionSort(int arr[]){ // insertion sort algorithm
 		
 		for (int i = 1; i<arr.length; i++){
 			int temp = arr[i];
@@ -32,7 +36,7 @@ public class Sort {
 	}
 	
 	
-	public int[] selectionSort(int arr[]){
+	public int[] selectionSort(int arr[]){ // select sort algorithm
 		
 		for (int i = 0; i<arr.length-1; i++){
 			int Min = i;
