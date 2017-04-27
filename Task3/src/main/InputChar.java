@@ -3,7 +3,7 @@ package main;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-/**Class for input values from console
+/**Class for input char value from console
  * @author mikhail.rybalko
  *
  */

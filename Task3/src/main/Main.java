@@ -1,5 +1,9 @@
 package main;
 
+/**main class
+ * @author mikhail.rybalko
+ *
+ */
 public class Main {
 
 
