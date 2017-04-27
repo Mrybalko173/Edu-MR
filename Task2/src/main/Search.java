@@ -1,64 +1,44 @@
 package main;
 
+/**Search value class
+ * @author mikhail.rybalko
+ *
+ */
 public class Search {
 	
-	public boolean searchOneByOne(int value, int[] arr){
-		boolean isFound = false;
+	public static boolean sequentalSearch(int value, int[] arr){ // sequental search method 
+		boolean f = false;
 		
 		for (int i = 0; i<arr.length; i++){
 			if (arr[i] == value){
-				isFound = true;
+				f = true;
 				break;
 			}
 		}
-		return isFound;
+		return f;
 	}
 	
-	
-	public boolean searchBinSel(int value, int[] arr) {
-		boolean isFound = false;
-		int[] arrSorted = arr.clone();		
-		Sort sort = new Sort();
-		float sortTimer;
-		float allTimer;
+	public static boolean binarySearch(int value, int[] arr) { // binary search method 
 		
-		//measure search
-		Timer timer = new Timer();
-		
-		timer.startTimer();
-		sort.selectionSort(arrSorted);
-		timer.stopTimer();
-		timer.printData("Sorting for binary search");
-		sortTimer = timer.getSeconds();
-		
-		timer.startTimer();
-		isFound = this.binary(0, arrSorted.length-1, value, arrSorted);	
-		timer.stopTimer();
-		timer.printData("Binary search");
-		allTimer = timer.getSeconds() + sortTimer;
-		
-		System.out.println("Sorting + search total time: " + allTimer + " seconds.");
-		return isFound;
-	}
-	
-	private boolean binary(int min, int max, int value, int[] arr){
-		
-		boolean isFound = false;
-		if (min>max){
-			isFound = false;
-		} else {
-			int mid = (max+min)/2;
-
-			if (arr[mid]==value){
-				isFound = true;
-			}			
-			if (arr[mid]<value){
-				isFound = this.binary(mid+1, max, value, arr);
-			} 
-			if (arr[mid]>value){
-				isFound = this.binary(min, mid-1, value, arr);
-			}
-		}
-		return isFound;
-	}
+		int [] arrSort = arr.clone();
+		Sort.selectionSort(arrSort); 
+	    int low = 0;
+        int high = arrSort.length-1;
+        boolean f = false;
+        while(low <= high ) {
+                int middle = (low+high) /2;
+                if (value> arrSort[middle] ){
+                        low = middle +1;
+                } else if (value< arrSort[middle]){
+                        high = middle -1;
+                } else { 
+                		f = true;
+                        return f;
+                }
+        }
+        return f;
 }
+	
+
+}
+

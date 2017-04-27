@@ -1,27 +1,25 @@
 package main;
 
+/**Class for timer
+ * @author mikhail.rybalko
+ *
+ */
 public class Timer {
 	
-	private long startTime;
-	private long endTime;
-	private float seconds;
-	
-	//timer to measure speed
+	long start;
+	long end;
+	float time;
 	
 	public void startTimer(){
-		startTime = System.nanoTime();
+		start = System.nanoTime();
 	}
 	
 	public void stopTimer(){
-		endTime = System.nanoTime();
-		this.seconds = ((float)(this.endTime - this.startTime))/1000000000;
-	}
-	
-	public void printData(String processName){
-		System.out.println(processName+" took " + this.seconds +" seconds.");
+		end = System.nanoTime();
+		this.time = ((float)(this.end - this.start))/1000000000;
 	}
 	
 	public float getSeconds(){
-		return seconds;
+		return time;
 	}
 }

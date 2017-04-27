@@ -7,6 +7,7 @@ package main;
 public class MakeArray {
 	
 	int [] a = new int[Input.input()];
+		
 	public MakeArray() throws Exception { // Constructor of mArray method
 		this.mArray();
 	}
