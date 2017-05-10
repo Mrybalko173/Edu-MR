@@ -16,5 +16,12 @@ public class Input {
 	    int num1 = Integer.parseInt(numa); 
 	    return num1;
 	}
+	
+public static String anyInput() throws Exception {
+		
+		BufferedReader reader = new BufferedReader( new InputStreamReader (System.in));
+		String any = reader.readLine();
+		return any;
+	}
 
 }

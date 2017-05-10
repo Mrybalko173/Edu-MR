@@ -20,7 +20,9 @@ public class Main {
 		//listB = new ArrayList<Integer>();
 		//listC = new ArrayList<Integer>();
 		Print.print();
-
+		
+		Game.doTowers(n, a, b, c);
+		//Print.print();
 	}
 
 }

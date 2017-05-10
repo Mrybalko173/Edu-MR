@@ -17,7 +17,7 @@ public class Tower {
 		}
 	}
 	
-	public Integer getArray(int i){ //Getter of this class
+	public int getArray(int i){ //Getter of this class
 		
 		return this.list.get(i);
 	} 
@@ -30,7 +30,7 @@ public class Tower {
 	public static void fTower(Tower y) throws Exception{
 		int n = Main.n;
 		for (int i = 1; i<=n; i++) {
-			y.setArray(i-1, i);;
+			y.setArray(i-1, i);
 		}
 	}
 }
