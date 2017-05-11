@@ -10,10 +10,10 @@ public class Tower {
 	}
 	
 	
-	public void mTower() throws Exception{
+	public void mTower() throws Exception{ //Create empty tower
 		int n = Main.n;
 		for (int i = 1; i<=n; i++) {
-			this.list.add(n+1);
+			this.list.add(0);
 		}
 	}
 	
@@ -27,7 +27,7 @@ public class Tower {
 		this.list.set(i, j);
 	}
 
-	public static void fTower(Tower y) throws Exception{
+	public static void fTower(Tower y) throws Exception{ //Create first full tower
 		int n = Main.n;
 		for (int i = 1; i<=n; i++) {
 			y.setArray(i-1, i);
