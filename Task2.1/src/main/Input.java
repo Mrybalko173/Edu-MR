@@ -3,19 +3,12 @@ package main;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-/**Class for input values from console
+/**Class for input int values from console
  * @author mikhail.rybalko
  *
  */
 
-public class Input {
-	public String inputString() throws Exception {
-		
-		BufferedReader reader = new BufferedReader( new InputStreamReader (System.in));
-	    String word = reader.readLine(); 
-	    return word;
-	}
-	
+public class Input {	
 	public static int inputInt() throws Exception {
 		
 		BufferedReader reader = new BufferedReader( new InputStreamReader (System.in));

@@ -1,11 +1,14 @@
 package main;
-
+/**class for Dog object
+ * @author mikhail.rybalko
+ *
+ */
 public class Dog {
 	private String name;
 	private int size;
 	private int age;
 	
-	public Dog(String name, int size, int age){
+	public Dog(String name, int size, int age){ //different types of Dog object constructors
 		this.name = name;
 		this.size = size;
 		this.age = age;
@@ -23,7 +26,7 @@ public class Dog {
 		setAgeRan();
 	}
 	
-	public String getSize(){ // Interprets int size as String
+	public String getSize(){ // Next methods are getters and setters for Dog object
 		String result;
 		switch (this.size){
 		case 1: result = "small";
@@ -37,12 +40,10 @@ public class Dog {
 	}
 	
 	public void setName(String name){
-		// changes format if input is not correct. Same methods should be generated in case if user needs to change age or size
 		this.name = name;
 	}
 	
-	public void setRandName(){
-		// changes format if input is not correct. Same methods should be generated in case if user needs to change age or size
+	public void setRandName(){ // setter of random name parameter
 		String word = StringRandom.rand();
 		this.name = word;
 	}
@@ -78,13 +79,17 @@ public class Dog {
 		this.size = (int) s; 
 	}
 	
-	@Override
+	public void setSize(int s){
+		this.size = s; 
+	}
+	
+	@Override // Override toString() method for print readable value of dog object
 	public String toString(){ 
 		String fill;
 		switch (this.size){
-		case 1: fill = " small  ";
+		case 0: fill = " small  ";
 				break;
-		case 2: fill = " medium ";
+		case 1: fill = " medium ";
 				break;
 		default: fill = "  big   ";
 				break;
