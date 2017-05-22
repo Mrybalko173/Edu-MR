@@ -1,9 +1,12 @@
 package main;
+
+import java.util.Arrays;
+
 /** class of sorting algorithms
  * @author mikhail.rybalko
  *
  */
-public class Sort {
+public class Sort implements Comparable<Dog[]> {
 	public void sortAgeAsc(Dog[] dogs){ 
 		for (int i = 1; i<Main.countOfDogs; i++){
 			for (int j = i-1; j>=0; j--){
@@ -16,7 +19,11 @@ public class Sort {
 			}
 		}
 		Print.printList(dogs);
+		
+		Arrays.sort(dogs, new Compare());
 	}
+	
+	
 	
 	public void sortAgeDes(Dog[] dogs){
 		for (int i = 1; i<Main.countOfDogs; i++){
@@ -91,6 +98,12 @@ public class Sort {
 			}
 		}
 		Print.printList(dogs);
+	}
+
+	@Override
+	public int compareTo(Dog[] dogs) {
+		
+		return 0;
 	}
 	
 	
