@@ -7,10 +7,10 @@ import java.util.Scanner;
  *
  */
 public class Rectangle{
-	private Point a;
-	private Point b;
-	private Point c;
-	private Point d;
+	protected Point a;
+	protected Point b;
+	protected Point c;
+	protected Point d;
 	private int l;
 	private int h;
 	
