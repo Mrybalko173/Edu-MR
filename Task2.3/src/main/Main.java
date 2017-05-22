@@ -1,27 +1,29 @@
 package main;
+
 import java.util.ArrayList;
 /**Main class
  * @author mikhail.rybalko
  *
  */
 public class Main {
-	ArrayList<Entry> book;
+	ArrayList<Entry> book; // Array list with object Entry type
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		Main m = new Main();
 		m.book = new ArrayList<Entry>(); //creating book of entries		
-		m.fillBook(); 
-		m.searchname();
+		m.fillBook(); // add new object with parameters to book
+		System.out.println("Address Book contanes next entries:");
+		for (Entry b : m.book){ // Print short snapshot of information from address book
+			System.out.println(b.toString());
+		}
+		m.searchname(); // search names in Address Book
 	}
 	
 	public void fillBook() throws Exception{ //method for entering new entries
-		//book.add(new Entry("First", "88005553535", "US", "92127", "LA", "Belyaya", "12"));
-		//book.add(new Entry("Second", "84006863759", "CA", "400005", "Vlg", "Chernaya", "43"));
-		boolean b = true;
-		while(b){
-			System.out.println("Enter new entry for book, if you want to go to seach enter 7 number");
+		boolean b = true; 
+		while(b){ // cycle for entering new  entries to book
+			System.out.println("Enter new entry for book, if you want to go to stop entering new entries enter 7 number");
 			String in = Input.input();
-			if (in.equals("7")) {
+			if (in.equals("7")) { // check entering value for exit from cycle
 				b = false;
 			}
 			else {
@@ -50,7 +52,7 @@ public class Main {
 		while (true){
 			System.out.println("Enter name fo search");
 			String searchName = Input.input();
-			for (Entry b : book){
+			for (Entry b : book){ // search cycle for book object which compare search name with names in book
 			if (searchName.equals(b.getName())){
 				b.printName();
 				b.printPhone();

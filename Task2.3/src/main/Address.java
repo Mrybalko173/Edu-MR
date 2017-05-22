@@ -18,43 +18,43 @@ public class Address {
 		setHouse(house);
 	}
 	
-	public String getContryCode(){
+	public String getContryCode(){ // getter country code field
 		return this.contryCode;
 	}
 	
-	public String getPostaleCode(){
+	public String getPostaleCode(){ // getter postal code field
 		return this.postaleCode;
 	}
 	
-	public String getCity(){
+	public String getCity(){ // getter city field
 		return this.city;
 	}
 	
-	public String getStreet(){
+	public String getStreet(){ // getter street field
 		return this.street;
 	}
 	
-	public String getHouse(){
+	public String getHouse(){ // getter house field
 		return this.house;
 	}
 	
-	public void setContryCode(String ccode){
+	public void setContryCode(String ccode){ // setter country code field
 		this.contryCode = ccode;
 	}
 	
-	public void setPostaleCode(String pcode){
+	public void setPostaleCode(String pcode){ // setter postal code field
 		this.postaleCode = pcode;
 	}
 	
-	public void setCity(String city){
+	public void setCity(String city){ // setter city field
 		this.city = city;
 	}
 	
-	public void setStreet(String street){
+	public void setStreet(String street){ // setter street field
 		this.street = street;
 	}
 	
-	public void setHouse(String house){
+	public void setHouse(String house){ // setter house field
 		this.house = house;
 	}
 }
