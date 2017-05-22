@@ -1,60 +1,59 @@
 package main;
+
+import java.util.Scanner;
+
 /**Class of Square
  * @author mikhail.rybalko
  *
  */
-public class Square extends ObjStart{
-	Point a;
-	Point b;
-	Point c;
-	Point d;
-	int l;
-	double n;
-	int h;
+public class Square{
+	private Point a;
+	private Point b;
+	private Point c;
+	private Point d;
+	private int l;
 	
-	@Override
-	public void setFigure(){
-		
-		l = 4;
-		n = l*Math.sqrt(3)/3;
-		h = (int) n;
-		a = new Point(0, 0);
-		b = new Point(0, l);
+	public void setFigure(Point p){  	//constructor of new Square object
+		System.out.println("Enter lenghth and hight of square");
+		Scanner in = new Scanner(System.in); 	// Enter length of square
+		String temp = in.nextLine();
+		String[] data = temp.trim().split(" ");
+		this.l = Integer.parseInt(data[0]);
+		a = new Point(p.getPointX(), p.getPointY()); 	// Create points for square
+		b = new Point(p.getPointX(), l);
 		c = new Point(l, l);
-		d = new Point(l, 0);
+		d = new Point(l, p.getPointY());
 	}
 	
-	@Override
-	public void print(){
+	
+	public void print(){ 	// print square coordinates
 		System.out.println("Square coordinates:");
 		System.out.println("a(" + a.getPointX() + ", " + a.getPointY() + ") b(" + b.getPointX() + ", " + b.getPointY() + ") c(" + c.getPointX() + ", " + c.getPointY() + ") d(" +  d.getPointX() + ", " + d.getPointY() + ")");
+		System.out.println();
 	}
 	
-	@Override
-	public int showPerimeter() {
+	
+	public int showPerimeter() { 	// calculate square perimeter
 		return this.l*4;
 	}
 
-	@Override
-	public void move(Point p) {
+	
+	public void move(Point p) { 	// move square to new point
 		this.a = p;
-		this.b.setPointX(p.getPointX()+this.b.getPointX());
-		this.b.setPointY(p.getPointY()+this.b.getPointY());
-		this.c.setPointX(p.getPointX()+this.c.getPointX());
-		this.c.setPointY(p.getPointY()+this.c.getPointY());
-		this.d.setPointX(p.getPointX()+this.d.getPointX());
-		this.d.setPointY(p.getPointY()+this.d.getPointY());
+		this.b.setPointX(p.getPointX());
+		this.b.setPointY(p.getPointY()+this.l);
+		this.c.setPointX(p.getPointX()+this.l);
+		this.c.setPointY(p.getPointY()+this.l);
+		this.d.setPointX(p.getPointX()+this.l);
+		this.d.setPointY(p.getPointY());
 	}
 
-	@Override
-	public void isInside(Point p) {
+	public boolean isInside(Point p) {	// check locating point in figure
+		boolean in = false;
 		if ((p.getPointX()<=c.getPointX())&&(p.getPointX()>=a.getPointX())&&(p.getPointY()>=a.getPointY())&&(b.getPointY()>=p.getPointY())){
-			System.out.println("This point inside this figure");
+			in = true;
 		}
-		else {
-			System.out.println("This point outside this figure");
-		}
-		
+		return in;
 	}
 	
 }

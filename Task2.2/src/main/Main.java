@@ -12,28 +12,28 @@ public class Main {
 	public static void main(String[] args){
 		Main m = new Main();
 		
-		Rect rec = new Rect();
-		rec.setFigure();
+		Rectangle  rec = new Rectangle ();
+		rec.setFigure(m.enterZeroPoint());
 		rec.print();
+		System.out.println("Perimeter this figure is " + rec.showPerimeter());
 		rec.move(m.movePoint());
 		rec.print();
-		rec.isInside(m.inSearch());
-		System.out.println("Perimeter this figure is " + rec.showPerimeter());
+		m.showIsInside(rec.isInside(m.inSearch()));
 		
 		Square sq = new Square();
-		sq.setFigure();
+		sq.setFigure(m.enterZeroPoint());
 		sq.print();
 		sq.move(m.movePoint());
 		sq.print();
-		sq.isInside(m.inSearch());
+		m.showIsInside(sq.isInside(m.inSearch()));
 		System.out.println("Perimeter this figure is " + sq.showPerimeter());
 		
 		Circle cir = new Circle();
-		cir.setFigure();
+		cir.setFigure(m.enterZeroPoint());
 		cir.print();
 		cir.move(m.movePoint());
 		cir.print();
-		cir.isInside(m.inSearch());
+		m.showIsInside(cir.isInside(m.inSearch()));
 		System.out.println("Perimeter this figure is " + cir.showPerimeter());
 		cir.boundingBox();
 	}
@@ -57,6 +57,25 @@ public class Main {
 		int a = Integer.parseInt(data[0]);
 		int	b = Integer.parseInt(data[1]);
 		Point p = new Point(a, b);
+		return p;
+	}
+	
+	public void showIsInside(boolean b){ // show info about searching point
+		if (b){
+			System.out.println("This point inside this figure");
+		}
+		else {
+			System.out.println("This point outside this figure");
+		}
+	}
+	
+	public Point enterZeroPoint(){	// enter start point for figure 
+		System.out.println("Enter coordinat of figure start point");
+		Point p = new Point();
+		this.in = new Scanner(System.in);
+		String temp = in.nextLine();
+		String[] data = temp.trim().split(" ");
+		p.setPoint(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
 		return p;
 	}
 }
