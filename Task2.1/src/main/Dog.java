@@ -8,19 +8,13 @@ public class Dog {
 	private int size;
 	private int age;
 	
-	public Dog(String name, int size, int age){ //different types of Dog object constructors
+	public Dog(String name, int size, int age){ //Dog constructor with all parameters
 		this.name = name;
 		this.size = size;
 		this.age = age;
 	}
-	
-	public Dog(String name){
-		this.name = name;
-		setSizeRan();
-		setAgeRan();
-	}
-	
-	public Dog(){
+		
+	public Dog(){		// default Dog constructor with random algorithms 
 		setRandName();
 		setSizeRan();
 		setAgeRan();
@@ -39,49 +33,52 @@ public class Dog {
 		return result;
 	}
 	
-	public void setName(String name){
+	public void setName(String name){ // setter of name parameter by user
 		this.name = name;
 	}
 	
-	public void setRandName(){ // setter of random name parameter
+	public void setRandName(){ 		// setter of random name parameter
 		String word = StringRandom.rand();
 		this.name = word;
 	}
 	
-	public String getAge(){
+	public String getAge(){		
 		Integer temp = new Integer(this.age);
 		return temp.toString();
 	}
 	
-	public String getName(){
+	public String getName(){	// getter of Name parameter
 		return this.name;
 	}
 	
-	public int getAgeInt(){
+	public int getAgeInt(){		// getter of Age integer parameter
 		return this.age;
 	}
 	
-	public int getSizeInt(){
+	public Integer getAgeIntObj(){	// getter of Age Integer (Object) parameter
+		Integer AgeObj = this.age;
+		return AgeObj;
+	}
+	
+	public int getSizeInt(){	// getter of Size integer parameter
 		return this.size;
 	}
 	
-	public void setAgeRan(){
+	public Integer getSizeIntObj(){	// getter of Size Integer (Object) parameter
+		Integer SizeObj = this.size;
+		return SizeObj;
+	}
+	
+	public void setAgeRan(){	// set random Age of Dog
 		double a = Math.random() * 20;
 		this.age = (int) a; 
 	}
 	
-	public void setAge(int a){
-		this.age = a; 
-	}
-	
-	public void setSizeRan(){
+	public void setSizeRan(){	// set random Age of Dog
 		double s = Math.random() * 3;
 		this.size = (int) s; 
 	}
 	
-	public void setSize(int s){
-		this.size = s; 
-	}
 	
 	@Override // Override toString() method for print readable value of dog object
 	public String toString(){ 

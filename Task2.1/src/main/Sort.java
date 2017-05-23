@@ -7,96 +7,33 @@ import java.util.Arrays;
  *
  */
 public class Sort implements Comparable<Dog[]> {
-	public void sortAgeAsc(Dog[] dogs){ 
-		for (int i = 1; i<Main.countOfDogs; i++){
-			for (int j = i-1; j>=0; j--){
-				if (dogs[j+1].getAgeInt()<dogs[j].getAgeInt()){
-					int temp1 = dogs[j].getAgeInt();
-					int temp2 = dogs[j+1].getAgeInt();
-					dogs[j].setAge(temp2);
-					dogs[j+1].setAge(temp1);
-				}	
-			}
-		}
-		Print.printList(dogs);
-		
-		Arrays.sort(dogs, new Compare());
-	}
-	
-	
-	
-	public void sortAgeDes(Dog[] dogs){
-		for (int i = 1; i<Main.countOfDogs; i++){
-			for (int j = i-1; j>=0; j--){
-				if (dogs[j+1].getAgeInt()>dogs[j].getAgeInt()){
-					int temp1 = dogs[j].getAgeInt();
-					int temp2 = dogs[j+1].getAgeInt();
-					dogs[j].setAge(temp2);
-					dogs[j+1].setAge(temp1);
-				}	
-			}
-		}
+	public void sortAgeAsc(Dog[] dogs){ 	// sort by Age in ascending order
+		Arrays.sort(dogs, new CompareAgeAcs());
 		Print.printList(dogs);
 	}
 	
-	public void sortSizeDes(Dog[] dogs){
-		for (int i = 1; i<Main.countOfDogs; i++){
-			for (int j = i-1; j>=0; j--){
-				if (dogs[j+1].getSizeInt()>dogs[j].getSizeInt()){
-					int temp1 = dogs[j].getSizeInt();
-					int temp2 = dogs[j+1].getSizeInt();
-					dogs[j].setSize(temp2);
-					dogs[j+1].setSize(temp1);
-				}	
-			}
-		}
+	public void sortAgeDes(Dog[] dogs){		// sort by Age in descending order
+		Arrays.sort(dogs, new CompareAgeDes());
 		Print.printList(dogs);
 	}
 	
-	public void sortSizeAsc(Dog[] dogs){
-		for (int i = 1; i<Main.countOfDogs; i++){
-			for (int j = i-1; j>=0; j--){
-				if (dogs[j+1].getSizeInt()<dogs[j].getSizeInt()){
-					int temp1 = dogs[j].getSizeInt();
-					int temp2 = dogs[j+1].getSizeInt();
-					dogs[j].setSize(temp2);
-					dogs[j+1].setSize(temp1);
-				}	
-			}
-		}
+	public void sortSizeDes(Dog[] dogs){	// sort by Size in descending order
+		Arrays.sort(dogs, new CompareSizeDes());
 		Print.printList(dogs);
 	}
 	
-	public void sortNameAsc(Dog[] dogs){
-		for (int i = 1; i<Main.countOfDogs; i++){
-			for (int j = i-1; j>=0; j--){
-				
-					int a = dogs[j+1].getName().compareTo(dogs[j].getName());
-					if (a<0){
-					String temp1 = dogs[j].getName();
-					String temp2 = dogs[j+1].getName();
-					dogs[j].setName(temp2);
-					dogs[j+1].setName(temp1);
-					}
-					
-			}
-		}
+	public void sortSizeAsc(Dog[] dogs){	// sort by Size in ascending order
+		Arrays.sort(dogs, new CompareSizeAcs());
 		Print.printList(dogs);
 	}
 	
-	public void sortNameDes(Dog[] dogs){
-		for (int i = 1; i<Main.countOfDogs; i++){
-			for (int j = i-1; j>=0; j--){
-				
-					int a = dogs[j+1].getName().compareToIgnoreCase(dogs[j].getName());
-					if (a>0){
-					String temp1 = dogs[j].getName();
-					String temp2 = dogs[j+1].getName();
-					dogs[j].setName(temp2);
-					dogs[j+1].setName(temp1);
-					}
-			}
-		}
+	public void sortNameAsc(Dog[] dogs){	// sort by Name in ascending order
+		Arrays.sort(dogs, new CompareNameAcs());
+		Print.printList(dogs);
+	}
+	
+	public void sortNameDes(Dog[] dogs){	// sort by Name in descending order
+		Arrays.sort(dogs, new CompareNameDes());
 		Print.printList(dogs);
 	}
 
