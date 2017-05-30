@@ -70,7 +70,7 @@ public class Dog {
 	}
 	
 	public void setAgeRan(){	// set random Age of Dog
-		double a = Math.random() * 20;
+		double a = Math.random() * 20 + 1;
 		this.age = (int) a; 
 	}
 	

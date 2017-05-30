@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author mikhail.rybalko
  *
  */
-public class Sort implements Comparable<Dog[]> {
+public class Sort  {
 	public void sortAgeAsc(Dog[] dogs){ 	// sort by Age in ascending order
 		Arrays.sort(dogs, new CompareAgeAcs());
 		Print.printList(dogs);
@@ -35,13 +35,5 @@ public class Sort implements Comparable<Dog[]> {
 	public void sortNameDes(Dog[] dogs){	// sort by Name in descending order
 		Arrays.sort(dogs, new CompareNameDes());
 		Print.printList(dogs);
-	}
-
-	@Override
-	public int compareTo(Dog[] dogs) {
-		
-		return 0;
-	}
-	
-	
+	}	
 }
