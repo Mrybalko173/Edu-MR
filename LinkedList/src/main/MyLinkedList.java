@@ -20,7 +20,7 @@ public class MyLinkedList<E> {
     	lastElt.prev = zeroElt;
     }
     
-    private class Element<E>{	//Class of List Element 
+     class Element<E>{	//Class of List Element 
         int ind; 				// index of element in List
     	E element; 				// creation element
     	Element<E> next;		// next element
@@ -64,9 +64,11 @@ public class MyLinkedList<E> {
         lastElt.prev = entry;
     }
     
-    public int getSize(){					//get size of list
-    	return this.size;
+    public Integer getSize(){					//get size of list
+    	return (Integer) this.size;
     }
+    
+    
     
     public Element<E> getElementByIndex(int index){		//get element by index from list
     	

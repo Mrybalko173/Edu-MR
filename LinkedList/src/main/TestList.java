@@ -18,6 +18,9 @@ public class TestList {
 		print(testL);
 		testL.reverse();											//use reverse method to list
 		print(testL);
+		MySortset set = new MySortset();							//create Sorted set collections
+		String[] arr = {"fght", "QWE asd", "Asd qwe", "Asd"};		//create array with strings
+		set.makeSortedSet(arr);										//execute SortedSet method for practical task 3
 	}
 	
 	public static void print(MyLinkedList list){					//print list method
